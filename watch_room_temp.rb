@@ -1,9 +1,5 @@
 require 'slack'
 
-Slack.configure do |config|
-  config.token = 'T02EZ2BLN/B03PKBEL5/APPRNzm8VGD2cvOBAytyZPOi'
-end
-
 Slack.chat_postMessage(text: '‰·“xŠÄŽ‹‚ð‚Í‚¶‚Ü‚ß‚·:cop:', channel: 'general')
 
 temp_clean = true
