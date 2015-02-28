@@ -31,34 +31,30 @@ loop do
   data = `sudo /home/pi/Adafruit_Python_DHT/examples/AdafruitDHT.py 2302 4`
   data_array = data.split(",")
 
-  if temp_clean
-    if data_array[0].to_i < cold_temp
-      #send cool nofity messege
-      post(":snowflake:温度が#{cold_temp}度以下になりました")
-      temp_clean = false
-    elsif data_array[0].to_i > hot_temp
-      #send hot notify message
-      post(":sunny:温度が#{hot_temp}度以上になりました")
-      temp_clean = false
-    else
-      temp_clean = true
-    end
+  if data_array[0].to_i < cold_temp
+    #send cool nofity messege
+    post(":snowflake:温度が#{cold_temp}度以下になりました") if temp_clean
+    temp_clean = false
+  elsif data_array[0].to_i > hot_temp
+    #send hot notify message
+    post(":sunny:温度が#{hot_temp}度以上になりました") if temp_clean
+    temp_clean = false
+  else
+    temp_clean = true
   end
 
 
-  if hum_clean
     if data_array[1].to_i < low_hum
       #send dry nofity messege
-      post(":cactus:湿度が#{low_hum}%以下になりました")
+      post(":cactus:湿度が#{low_hum}%以下になりました") if hum_clean
       hum_clean = false
     elsif data_array[1].to_i > high_hum
       #send wet notify message
-      post(":droplet:湿度が#{high_hum}%以上になりました")
+      post(":droplet:湿度が#{high_hum}%以上になりました") if hum_clean
       hum_clean = false
     else
       hum_clean = true
     end
-  end
 
   sleep(60)
 
