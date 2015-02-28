@@ -13,7 +13,7 @@ def post(text)
   http = Net::HTTP.post_form(uri, {"payload" => data.to_json})
 end
 
-post("¿¿/¿¿¿¿¿¿¿¿¿¿¿¿:cop:")
+post("æ¸©åº¦/æ¹¿åº¦ã‚’ç›£è¦–ã¯ã˜ã‚ã¾ã™:cop:")
 
 #set alert temp
 cold_temp = 20
@@ -34,11 +34,11 @@ loop do
   if temp_clean
     if data[0].to_i < cold_temp
       #send cool nofity messege
-      post(":snowflake:¿¿¿#{cold_temp}¿¿¿¿¿¿¿¿¿")
+      post(":snowflake:æ¸©åº¦ãŒ#{cold_temp}åº¦ä»¥ä¸‹ã«ãªã‚Šã¾ã—ãŸ")
       temp_clean = false
     elsif data[0].to_i > hot_temp
       #send hot notify message
-      post(":sunny:¿¿¿#{hot_temp}¿¿¿¿¿¿¿¿¿")
+      post(":sunny:æ¸©åº¦ãŒ#{hot_temp}åº¦ä»¥ä¸Šã«ãªã‚Šã¾ã—ãŸ")
       temp_clean = false
     else
       temp_clean = true
@@ -49,11 +49,11 @@ loop do
   if hum_clean
     if data[1].to_i < low_hum
       #send dry nofity messege
-      post(":cactus:¿¿¿#{low_hum}¿¿¿¿¿¿¿¿")
+      post(":cactus:æ¹¿åº¦ãŒ#{low_hum}%ä»¥ä¸Šã«ãªã‚Šã¾ã—ãŸ")
       hum_clean = false
     elsif data[1].to_i > high_hum
       #send wet notify message
-      post(":droplet:¿¿¿#{high_hum}¿¿¿¿¿¿¿¿")
+      post(":droplet:æ¹¿åº¦ãŒ#{high_hum}%ä»¥ä¸Šã«ãªã‚Šã¾ã—ãŸ")
       hum_clean = false
     else
       hum_clean = true
