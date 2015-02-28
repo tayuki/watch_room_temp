@@ -13,7 +13,7 @@ REQ_URL - slack url for immcoming Incoming WebHooks
 
 use bunler 
 
-```
+```ruby
 #Gemfile
 gem 'dotenv'
 ```
