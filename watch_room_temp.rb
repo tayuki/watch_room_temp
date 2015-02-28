@@ -32,11 +32,11 @@ loop do
   data_array = data.split(",")
 
   if temp_clean
-    if data[0].to_i < cold_temp
+    if data_array[0].to_i < cold_temp
       #send cool nofity messege
       post(":snowflake:温度が#{cold_temp}度以下になりました")
       temp_clean = false
-    elsif data[0].to_i > hot_temp
+    elsif data_array[0].to_i > hot_temp
       #send hot notify message
       post(":sunny:温度が#{hot_temp}度以上になりました")
       temp_clean = false
@@ -47,11 +47,11 @@ loop do
 
 
   if hum_clean
-    if data[1].to_i < low_hum
+    if data_array[1].to_i < low_hum
       #send dry nofity messege
       post(":cactus:湿度が#{low_hum}%以下になりました")
       hum_clean = false
-    elsif data[1].to_i > high_hum
+    elsif data_array[1].to_i > high_hum
       #send wet notify message
       post(":droplet:湿度が#{high_hum}%以上になりました")
       hum_clean = false
