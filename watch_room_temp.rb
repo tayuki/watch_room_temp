@@ -44,19 +44,19 @@ loop do
   end
 
 
-    if data_array[1].to_i < low_hum
-      #send dry nofity messege
-      post(":cactus:湿度が#{low_hum}%以下になりました") if hum_clean
-      hum_clean = false
-    elsif data_array[1].to_i > high_hum
-      #send wet notify message
-      post(":droplet:湿度が#{high_hum}%以上になりました") if hum_clean
-      hum_clean = false
-    else
-      hum_clean = true
-    end
+  if data_array[1].to_i < low_hum
+    #send dry nofity messege
+    post(":cactus:湿度が#{low_hum}%以下になりました") if hum_clean
+    hum_clean = false
+  elsif data_array[1].to_i > high_hum
+    #send wet notify message
+    post(":droplet:湿度が#{high_hum}%以上になりました") if hum_clean
+    hum_clean = false
+  else
+    hum_clean = true
+  end
 
-  sleep(60)
+    sleep(60)
 
 end
 
