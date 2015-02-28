@@ -9,7 +9,7 @@ def post(text)
   data = {
     "text" => text
   }
-  uri = URI.parse(ENV[REQ_URL])
+  uri = URI.parse(ENV["REQ_URL"])
   http = Net::HTTP.post_form(uri, {"payload" => data.to_json})
 end
 
@@ -49,7 +49,7 @@ loop do
   if hum_clean
     if data[1].to_i < low_hum
       #send dry nofity messege
-      post(":cactus:湿度が#{low_hum}%以上になりました")
+      post(":cactus:湿度が#{low_hum}%以下になりました")
       hum_clean = false
     elsif data[1].to_i > high_hum
       #send wet notify message
