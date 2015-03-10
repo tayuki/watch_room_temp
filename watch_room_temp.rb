@@ -16,12 +16,12 @@ end
 post("温度/湿度を監視はじめます:cop:")
 
 #set alert temp
-cold_temp = 20
+cold_temp = 18
 hot_temp = 28
 
 #set alert hum
 high_hum = 75
-low_hum = 35
+low_hum = 30
 
 #init status
 temp_clean = true
