@@ -56,7 +56,7 @@ loop do
     hum_clean = true
   end
 
-    sleep(60)
+    sleep(360)
 
 end
 
